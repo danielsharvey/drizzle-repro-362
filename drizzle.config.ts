@@ -8,10 +8,12 @@ export default {
   // ],
   out: './drizzle',
   // connectionString: process.env.DB_URL,
-  user: 'root',
-  password: '',
-  host: '127.0.0.1',
-  port: 3306,
-  database: 'tmp',
+  dbCredentials: {
+    user: 'root',
+    password: '',
+    host: '127.0.0.1',
+    port: 3306,
+    database: 'tmp',
+  },
   breakpoints: true,
 } satisfies Config;

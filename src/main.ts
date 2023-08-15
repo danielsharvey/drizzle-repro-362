@@ -38,7 +38,11 @@ console.log('drizzle-repro');
 
     const connectionPool = createPool(connectionProps);
 
-    const db = drizzle(connectionPool, { logger: true, schema: schema });
+    const db = drizzle(connectionPool, {
+      logger: true,
+      schema: schema,
+      mode: 'default',
+    });
 
     type theType = InferModel<typeof schema.drizzleRepro, 'insert'>;
 
@@ -48,6 +52,7 @@ console.log('drizzle-repro');
       // fieldThatDoesNotExist: 'Another value',
     };
 
+    // comment this line out and the insert succeeds
     value['fieldThatDoesNotExist'] = 'Another value';
 
     await db.insert(schema.drizzleRepro).values(value);

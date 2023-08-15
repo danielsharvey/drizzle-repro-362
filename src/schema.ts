@@ -20,7 +20,7 @@ import {
   boolean,
 } from 'drizzle-orm/mysql-core';
 import {
-  AnyColumnBuilder,
+  // AnyColumnBuilder,
   InferModel,
   relations,
   sql,
